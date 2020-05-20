@@ -7,6 +7,7 @@ $openLawTeal: #00a8b3;
 $openLawA11yTeal: #00818a;
 $openLawLightBrown: #cf9768;
 $openLawA11yBrown: #a36633;
+$openLawGold: #b49857;
 $openLawCharcoal: #22283a;
 $openLawArapawa: #225160;
 $openLawGray: #757575;
@@ -14,16 +15,17 @@ $openLawDarkGray: #3d3d3d;
 $openLawMediumGray: #e0e0e0;
 $openLawLightGray: #f5f5f5;
 
+
 @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800&display=swap');
 
 @mixin header-one {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 40px;
 }
 
 @mixin header-two {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 30px;
 }
 
@@ -45,6 +47,10 @@ $openLawLightGray: #f5f5f5;
 @mixin body {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 15px;
+}
+
+@mixin nav-header {
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 @mixin card-style {
@@ -75,10 +81,6 @@ $openLawLightGray: #f5f5f5;
 
 ::-webkit-scrollbar {
   display: none;
-}
-
-* {
-  font-family: 'Nunito Sans', sans-serif;
 }
 
 button:focus {
@@ -114,13 +116,11 @@ li {
 
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 1vw;
+  padding-left: 1vw;
   margin-bottom: 115px;
-  margin-left: auto;
-  margin-right: auto;
   video{
-    padding: 10%;
+    padding: 10%; 
     width: 100%;
   }
 }
@@ -146,7 +146,6 @@ li {
 }
 
 .highlighted-content {
-  background: url(../images/open-law-background.png) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -155,11 +154,11 @@ li {
   padding-top: 90px;
 }
 
-.home-wrapper {
-  position: relative;
+.side-wrapper {
   width: 100%;
-  background: $openWhite;
-  padding-top: 60px;
+  position: relative;
+  display: inline-block;
+  z-index: 10;
 }
 
 .border {
@@ -269,6 +268,11 @@ li {
 }
 
 @media (min-width: 767px) {
+
+  .side-wrapper {
+    width: calc(100% - 30vw);
+    max-width: calc(100% - 375px);
+  }
   
   .horizontal-container {
     flex-direction: row;
@@ -306,14 +310,6 @@ li {
   }
 }
 
-.header-title {
-  @include header-two;
-  color: white;
-  text-align: center;
-  margin: 0;
-  padding: 5vh 10vw 0;
-}
-
 @import "./Nav.scss";
 @import "./Search.scss";
 @import "./AdvancedSearch.scss";
@@ -324,4 +320,5 @@ li {
 @import "./MainContent.scss";
 @import "./Result.scss";
 @import "./SingleCase.scss";
-@import "./PluginsList.scss"
+@import "./PluginsList.scss";
+@import "./Microsite.scss"

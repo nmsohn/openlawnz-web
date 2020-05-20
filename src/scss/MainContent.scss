@@ -1,8 +1,11 @@
 .main {
   .content {
-    @include card-style;
-    padding: 30px 40px 50px;
+    padding: 0px 0px 50px;
     font-size: 16px;
+  }
+
+  .content-spaced {
+    margin-top: 15px;
   }
 
   .image-container {
@@ -24,6 +27,13 @@
     color: $openLawDarkGreen;
     margin-bottom: 10px;
     margin-top: 0;
+  }
+
+  h4 {
+    @include header-five;
+    color: $openLawDarkGreen;
+    margin-bottom: 10px;
+    margin-top: 10px;
   }
 
   img {
@@ -165,6 +175,7 @@
 
 @media (min-width: 767px) {
   .main {
+    margin: 40px 4vw 115px 4vw;
     .paragraph-with-figure {
       flex-direction: row;
 
@@ -202,4 +213,10 @@
   font: inherit;
   cursor: pointer;
   outline: inherit;
+}
+
+
+.centre {
+  margin-left: auto;
+  margin-right: auto;
 }

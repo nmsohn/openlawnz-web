@@ -6,13 +6,16 @@ const CardOverlay = (props) => {
   const { overlayTitle, overlayDescription, image_url } = content
 
   return isOverlaying ? (
+    //크기 부모로부터 받기?
+    //inherit?
     <div className={`card-overlay`}>
       <span id="close" onClick={hide}>
         x
       </span>
-      <h2>{overlayTitle}</h2>
+      <p>content</p>
+      {/* <h2>{overlayTitle}</h2>
       <p>{overlayDescription}</p>
-      <img src={image_url} alt={overlayTitle} />
+      <img src={image_url} alt={overlayTitle} /> */}
     </div>
   ) : null
 }

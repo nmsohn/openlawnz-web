@@ -1,33 +1,31 @@
 import React from "react"
 import PropTypes from "prop-types"
-import cn from "classnames"
-import { Link } from "gatsby"
+import CardOverlay from "./CardOverlay"
+import CardContent from "./CardContent"
+import { toSlug } from "../../js/ToSlug"
+import useToggle from "./useToggle"
 
 const Card = (props) => {
-  let { className, idx, slug, isSmall, content, ...attrs } = props
+  let { content, idx } = props
 
-  let { title, description, image_url } = content
-
-  const customClasses = cn(className, "landing-card", isSmall && "card-small")
+  const { state, toggle } = useToggle()
 
   return (
-    <div className={customClasses} key={idx} {...attrs}>
-      <h2>{title}</h2>
-      <p>{description}</p>
-
-      <img src={image_url} alt={title} />
+    <div className={"card-container"} onClick={toggle}>
+      <CardContent
+        slug={`/get-empowered/${content.fields.slug}${toSlug(content.content[0].title)}`}
+        key={idx}
+        content={content}
+        isOverlaying={state}
+      />
+      <CardOverlay content={content} isOverlaying={state} hide={toggle} />
     </div>
   )
 }
 
 Card.propTypes = {
-  clsasName: PropTypes.string,
-  isSmall: PropTypes.bool,
-}
-
-Card.defaultProps = {
-  className: "",
-  isSmall: false,
+  content: PropTypes.object,
+  idx: PropTypes.number,
 }
 
 export default Card

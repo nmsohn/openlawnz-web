@@ -2,14 +2,17 @@ import React from "react"
 import PropTypes from "prop-types"
 
 const CardOverlay = (props) => {
-  let { data, isOverlaying, hide } = props
+  let { content, isOverlaying, hide } = props
+  const { overlayTitle, overlayDescription, image_url } = content
 
   return isOverlaying ? (
-    <div className={"card-overlay"}>
+    <div className={`card-overlay`}>
       <span id="close" onClick={hide}>
         x
       </span>
-      <p>content</p>
+      <h2>{overlayTitle}</h2>
+      <p>{overlayDescription}</p>
+      <img src={image_url} alt={overlayTitle} />
     </div>
   ) : null
 }

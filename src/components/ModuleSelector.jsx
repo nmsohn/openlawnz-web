@@ -102,7 +102,7 @@ const ModuleSelector = ({ module, idx, wizardModuleData }) => {
     case "card":
       return (
         <div className="module-block">
-          <Card content={module.content} idx={idx} isSmall={module.isSmall} />
+          <Card content={module.content} idx={idx} />
         </div>
       )
     default:

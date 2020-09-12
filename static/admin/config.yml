@@ -167,6 +167,22 @@ collections:
                     label: Cases
                     label_singular: Case
                     widget: case_list
+              - label: Card
+                name: card
+                name: content
+                widget: list
+                fields:
+                - { name: title, label: Title }
+                - { name: description, Label: Description }
+                - { name: overlayTitle, Label: OverlayTitle, hint: "This will show up when clicking the card" }
+                - { name: overlayDescription, Label: OverlayDescription,  hint: "This will show up when clicking the card" }
+                - label: "Image"
+                  name: "image_url"
+                  widget: "image"
+                  media_library:
+                    config:
+                      multiple: false
+              
   
       - label: Key Terms
         label_singular: Term
